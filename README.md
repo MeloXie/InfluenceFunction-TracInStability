@@ -67,7 +67,18 @@ The implementation is **fully notebook-based**. After installing the required de
 
 # Requirements and Installation
 
-## 1. Install the common dependencies
+
+## Quick Start (Recommended)
+
+The repository provides a notebook, **`00_Install_Requirements.ipynb`**, for one-click installation of all required packages.
+
+Simply open the notebook in Jupyter Notebook and execute all cells sequentially. The notebook will install the common dependencies and provides the installation options for the supported influence-estimation implementations.
+
+After the installation is complete, **restart the notebook kernel** before running the experiment notebooks.
+
+If you prefer to install the packages manually, the following instructions can be followed.
+
+## 1. Install the Common Dependencies
 
 The repository is designed to be executed using **Jupyter Notebook**.
 
@@ -78,22 +89,23 @@ Open any notebook in the repository and run the following cell to install the re
 !python -m pip install -r requirements.txt
 ```
 
-After the installation is complete, restart the notebook kernel and execute all cells sequentially.
+After the installation is complete, restart the notebook kernel before executing the experiment notebooks.
 
-The `requirements.txt` file contains the packages used throughout the experiments, including TensorFlow, TensorFlow Datasets, NumPy, Pandas, SciPy, scikit-learn, Matplotlib, Seaborn, and Statsmodels.
+The `requirements.txt` file contains the common dependencies used throughout the experiments, including TensorFlow, NumPy, Pandas, SciPy, scikit-learn, Matplotlib, Seaborn, and Statsmodels.
 
 ## 2. Install an Influence-Estimation Implementation
 
-The experiments in this repository support two closely related implementations of the influence estimation framework.
 
-The modified **`influenciae_tabular`** implementation, originally developed by CA-Fernandes, incorporates updates to improve dependency compatibility (e.g., NumPy-related compatibility) while preserving the same influence estimation workflow. The official Influenciae package can also be used to reproduce the experiments reported in this repository. Therefore, users may choose either implementation according to their preference.
+The experiments in this repository support two closely related implementations of the influence-estimation framework.
+
+The modified **`influenciae_tabular`** implementation, originally developed by CA-Fernandes, incorporates updates to improve dependency compatibility (e.g., NumPy-related compatibility) while preserving the same influence estimation workflow. The official Influenciae package can also be used to reproduce all experiments reported in this repository. Therefore, users may choose either implementation according to their preference.
 
 | Implementation | Recommended use |
 |---|---|
 | Modified `influenciae_tabular` | Reproducing the original development environment |
 | Official Influenciae | Using the official package distribution |
 
-Both implementations use the prepared CSV datasets included in this repository. The CSV-based workflow is adopted throughout the released notebooks because it avoids compatibility issues associated with TensorFlow Datasets while reproducing exactly the same experimental data.
+The released notebooks use the prepared CSV datasets included in this repository. The CSV-based workflow simplifies the experimental setup by avoiding additional TensorFlow Datasets dependencies while reproducing the same experimental data used in the paper.
 
 > **Note:** Install only one Influenciae implementation in a given environment to avoid package conflicts.
 
@@ -127,7 +139,7 @@ import pandas as pd
 df = pd.read_csv("diamonds.csv")
 ```
 
-To simplify execution, the required CSV datasets shall be placed in the same directory as the corresponding notebooks.
+To simplify execution, each notebook expects the required CSV datasets to be located in the same directory as the notebook.
 
 
 
