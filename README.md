@@ -101,11 +101,13 @@ Both implementations support the same experimental pipeline and reproduce the re
 
 ### Option A: Modified `influenciae_tabular`
 
-This is the recommended option for running notebooks that load datasets directly through TensorFlow Datasets:
+Open a Jupyter notebook from the repository and execute:
 
-```bash
-python -m pip install -e ./third_party/influenciae_tabular
+```python
+!python -m pip install -e ./third_party/influenciae_tabular
 ```
+
+Restart the notebook kernel after the installation is complete.
 
 The corresponding notebooks use code such as:
 
@@ -124,11 +126,13 @@ df = tfds.as_dataframe(ds, ds_info)
 
 ### Option B: Official Influenciae with the provided CSV files
 
-Users who prefer the official Influenciae package can install it separately and use the CSV-based notebooks:
+Open a Jupyter notebook from the repository and execute:
 
-```bash
-python -m pip install Influenciae
+```python
+!python -m pip install Influenciae
 ```
+
+Restart the notebook kernel after the installation is complete.
 
 The corresponding notebooks load the prepared datasets directly:
 
