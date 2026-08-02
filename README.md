@@ -82,22 +82,22 @@ After the installation is complete, restart the notebook kernel and execute all 
 
 The `requirements.txt` file contains the packages used throughout the experiments, including TensorFlow, TensorFlow Datasets, NumPy, Pandas, SciPy, scikit-learn, Matplotlib, Seaborn, and Statsmodels.
 
-## 2. Install an influence-estimation implementation
+## 2. Install an Influence-Estimation Implementation
 
-The experiments support two closely related influence-function implementations:
+The repository supports two closely related influence-function implementations. The two options are provided because of compatibility differences between the original Influenciae package and the TensorFlow/TensorFlow Datasets versions used in this project.
+
+The official Influenciae implementation does not support the TensorFlow Datasets (`tfds`) workflow adopted by several notebooks in this repository. Therefore, notebooks using the official implementation load the prepared CSV datasets included in the repository instead. These CSV files are directly converted from the corresponding TensorFlow Datasets and contain exactly the same data.
+
+To support the original notebook workflow, we also provide a slightly modified version, **`influenciae_tabular`**, originally developed by CA-Fernandes. This implementation is compatible with the TensorFlow Datasets workflow, allowing datasets (e.g., `diamonds`) to be loaded directly through `tfds.load()`.
+
+Both implementations support the same experimental pipeline and reproduce the results reported in the paper. The only difference is the dataset loading method.
 
 | Implementation | Data-loading approach | Recommended use |
 |---|---|---|
 | Modified `influenciae_tabular` | TensorFlow Datasets (`tfds`) | Reproducing the original notebook workflow |
-| Official Influenciae | Provided CSV files | Simpler reproduction using the prepared datasets |
+| Official Influenciae | Prepared CSV files | Simpler reproduction using the provided datasets |
 
-Most experiments in this repository were developed using a slightly modified version of `influenciae_tabular`, originally provided by CA-Fernandes. This version supports the TensorFlow Datasets workflow used in several notebooks.
-
-Some experiments instead use the official Influenciae implementation together with the prepared CSV files provided in this repository. Both implementations support the same experimental pipeline; the main difference is how the dataset is loaded.
-
-The two alternatives are provided because of dependency compatibility differences between TensorFlow, TensorFlow Datasets, and Influenciae.
-
-> Install only one Influenciae implementation in a given environment to avoid package conflicts.
+> **Note:** Install only one Influenciae implementation in a given environment to avoid package conflicts.
 
 ### Option A: Modified `influenciae_tabular`
 
