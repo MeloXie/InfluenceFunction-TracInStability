@@ -128,12 +128,6 @@ df = pd.read_csv("diamonds.csv")
 ```
 
 To simplify execution, the required CSV datasets shall be placed in the same directory as the corresponding notebooks.
-## Which option should I use?
-
-For the workflow closest to the one used during development, use the modified `influenciae_tabular` implementation with TensorFlow Datasets.
-
-For the simplest reproduction path, use the official Influenciae package with the provided CSV files.
-
 
 
 
