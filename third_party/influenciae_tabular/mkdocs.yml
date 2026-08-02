@@ -1,0 +1,69 @@
+site_name: Influenciae
+
+nav:
+  - Home: index.md
+  - Influence Functions:
+      - First Order Influence Calculator: api/influence/first_order_influence_calculator.md
+      - Second Order Influence Calculator: api/influence/second_order_influence_calculator.md
+      - Arnoldi Influence Calculator: api/influence/arnoldi.md
+  - Representer Point Selection:
+      - Representer Point Selection - L2: api/representer_point_selection/rps_l2.md
+      - Representer Point Selection - LJE: api/representer_point_selection/rps_lje.md
+  - TracIn: api/tracin.md
+  - Boundary Based:
+      - Boundary Based Sample Boundary: api/Boundary-based/sample_boundary.md
+      - Boundary Based Weights Boundary: api/Boundary-based/weights_boundary.md
+  - Benchmarks: api/benchmarks.md
+
+theme:
+  name: "material"
+  logo: assets/LogoAlt.png
+  favicon: assets/LogoAlt.png
+  palette:
+    - scheme: default
+      primary: dark
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - numkdoc
+  - search
+
+markdown_extensions:
+  - footnotes
+  - extra
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - codehilite
+  - toc:
+      permalink: true
+      toc_depth: 1-2
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - css/custom.css
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/custom.js
+
+repo_name: "deel-ai/influenciae"
+repo_url: "https://github.com/deel-ai/influenciae"
