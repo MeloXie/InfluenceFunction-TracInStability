@@ -57,8 +57,8 @@ The repository was developed and tested using the environment below. All experim
 
 | Component | Version |
 |-----------|---------|
-| Python | 3.10.x |
-| Jupyter Notebook | 7.x |
+| Python | 3.10.8 |
+| Jupyter Notebook | 7.3.2 |
 | Operating System | Windows 11 |
 | CUDA | Not required |
 | GPU | Optional (all reported results in the paper were generated on CPU) |
