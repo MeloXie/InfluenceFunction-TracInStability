@@ -70,9 +70,9 @@ The implementation is **fully notebook-based**. After installing the required de
 
 ## Quick Start (Recommended)
 
-The repository provides a notebook, **`00_Install_Requirements.ipynb`**, for one-click installation of all required packages.
+The repository provides a notebook, **`00_Install_Requirements.ipynb`**, for quick installation of all required packages.
 
-Simply open the notebook in Jupyter Notebook and execute all cells sequentially. The notebook will install the common dependencies and provides the installation options for the supported influence-estimation implementations.
+Simply open the notebook in Jupyter Notebook and execute cells sequentially. The notebook will install the common dependencies and provide the installation options for the supported influence-estimation implementations. Please only install one influence-estimation implementation.
 
 After the installation is complete, **restart the notebook kernel** before running the experiment notebooks.
 
