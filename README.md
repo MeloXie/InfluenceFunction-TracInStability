@@ -13,7 +13,8 @@ This repository contains the implementation and experimental framework accompany
 
 The project provides a reproducible notebook-based implementation for evaluating the data-side robustness of two representative training-data influence estimation methods:
 - **First-Order Influence Function (FOIF)**
-- **TracIn**  
+- **TracIn**
+
 Implemented by Influenciae
 
 
