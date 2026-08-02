@@ -144,7 +144,23 @@ To simplify execution, each notebook expects the required CSV datasets to be loc
 
 
 
+# Reproducing the Paper
 
+The repository is organised according to the figures and tables reported in the paper. Each experiment is contained in an individual folder under `PaperExperiments/`.
+
+Each experiment folder is **self-contained** and includes:
+
+- the Jupyter notebook used for the experiment;
+- the required datasets and intermediate files;
+- the generated outputs (where applicable); and
+- a README describing the experiment and expected results.
+
+This organisation provides two ways to reproduce the paper:
+
+1. **Full reproduction:** Execute the notebook from beginning to end to regenerate all intermediate results and the final figures/tables.
+2. **Fast reproduction:** Use the provided intermediate files to reproduce the final figures and tables without rerunning the complete experimental pipeline.
+
+The following table maps each figure and table in the paper to its corresponding experiment folder.
 
 
 
