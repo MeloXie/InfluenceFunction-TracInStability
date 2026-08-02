@@ -84,7 +84,7 @@ The `requirements.txt` file contains the packages used throughout the experiment
 
 ## 2. Install an Influence-Estimation Implementation
 
-The repository supports two closely related influence-function implementations. The two options are provided because of compatibility differences between the original Influenciae package and the TensorFlow/TensorFlow Datasets versions used in this project.
+The repository supports two closely related Influence Estimation implementations. The two options are provided because of compatibility differences between the original Influenciae package and the TensorFlow/TensorFlow Datasets versions used in this project.
 
 The official Influenciae implementation does not support the TensorFlow Datasets (`tfds`) workflow adopted by several notebooks in this repository. Therefore, notebooks using the official implementation load the prepared CSV datasets included in the repository instead. These CSV files are directly converted from the corresponding TensorFlow Datasets and contain exactly the same data.
 
