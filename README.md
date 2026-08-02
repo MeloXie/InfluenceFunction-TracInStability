@@ -69,20 +69,16 @@ The implementation is **fully notebook-based**. After installing the required de
 
 ## 1. Install the common dependencies
 
-We recommend creating a clean Python environment before installing the required packages.
+The repository is designed to be executed using **Jupyter Notebook**.
 
-On Windows:
+Open any notebook in the repository and run the following cell to install the required Python packages:
 
-```bash
-python -m venv influence-env
-influence-env\Scripts\activate
+```python
+!python -m pip install --upgrade pip
+!python -m pip install -r requirements.txt
 ```
 
-Upgrade `pip` and install the common dependencies:
-
-```bash
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+After the installation is complete, restart the notebook kernel and execute all cells sequentially.
 ```
 
 The `requirements.txt` file contains the packages used throughout the experiments, including TensorFlow, TensorFlow Datasets, NumPy, Pandas, SciPy, scikit-learn, Matplotlib, Seaborn, and Statsmodels.
