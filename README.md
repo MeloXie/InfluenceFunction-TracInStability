@@ -84,22 +84,18 @@ The `requirements.txt` file contains the packages used throughout the experiment
 
 ## 2. Install an Influence-Estimation Implementation
 
-The experiments in this repository support two closely related
-influence-function implementations:
+The experiments in this repository support two closely related implementations of the influence-function framework.
+
+The modified **`influenciae_tabular`** implementation, originally developed by CA-Fernandes, incorporates updates to improve dependency compatibility (e.g., NumPy-related compatibility) while preserving the same influence-function workflow. The official Influenciae package can also be used to reproduce the experiments reported in this repository. Therefore, users may choose either implementation according to their preference.
 
 | Implementation | Recommended use |
 |---|---|
 | Modified `influenciae_tabular` | Reproducing the original development environment |
 | Official Influenciae | Using the official package distribution |
 
-Both implementations can run the experiments using the prepared CSV
-datasets included in this repository. The CSV-based workflow is used
-throughout the released notebooks because it avoids compatibility issues
-between older TensorFlow versions and recent versions of
-`tensorflow-datasets`.
+Both implementations use the prepared CSV datasets included in this repository. The CSV-based workflow is adopted throughout the released notebooks because it avoids compatibility issues associated with TensorFlow Datasets while reproducing exactly the same experimental data.
 
-> Install only one Influenciae implementation in a given environment to
-> avoid package conflicts.
+> **Note:** Install only one Influenciae implementation in a given environment to avoid package conflicts.
 
 ### Option A: Modified `influenciae_tabular`
 
@@ -123,19 +119,15 @@ Restart the notebook kernel after installation.
 
 ### Dataset loading
 
-All released notebooks use the prepared CSV datasets included in the
-repository. For example, the Diamonds dataset is loaded using:
+All notebooks load the prepared CSV datasets directly. For example:
 
 ```python
-from pathlib import Path
 import pandas as pd
 
-DATA_DIR = Path("data")
-df = pd.read_csv(DATA_DIR / "diamonds.csv")
+df = pd.read_csv("diamonds.csv")
 ```
 
-The provided CSV files contain the data used in the reported experiments,
-so no additional dataset download is required.
+To simplify execution, the required CSV datasets shall be placed in the same directory as the corresponding notebooks.
 ## Which option should I use?
 
 For the workflow closest to the one used during development, use the modified `influenciae_tabular` implementation with TensorFlow Datasets.
