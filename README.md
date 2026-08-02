@@ -79,7 +79,6 @@ Open any notebook in the repository and run the following cell to install the re
 ```
 
 After the installation is complete, restart the notebook kernel and execute all cells sequentially.
-```
 
 The `requirements.txt` file contains the packages used throughout the experiments, including TensorFlow, TensorFlow Datasets, NumPy, Pandas, SciPy, scikit-learn, Matplotlib, Seaborn, and Statsmodels.
 
