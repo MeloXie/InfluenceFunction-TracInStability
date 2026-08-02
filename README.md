@@ -84,7 +84,7 @@ The `requirements.txt` file contains the packages used throughout the experiment
 
 ## 2. Install an Influence-Estimation Implementation
 
-The experiments in this repository support two closely related implementations of the influence-function framework.
+The experiments in this repository support two closely related implementations of the influence estimation framework.
 
 The modified **`influenciae_tabular`** implementation, originally developed by CA-Fernandes, incorporates updates to improve dependency compatibility (e.g., NumPy-related compatibility) while preserving the same influence-function workflow. The official Influenciae package can also be used to reproduce the experiments reported in this repository. Therefore, users may choose either implementation according to their preference.
 
