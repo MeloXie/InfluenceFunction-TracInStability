@@ -49,7 +49,21 @@ The repository includes the code required to reproduce the experiments, figures,
 
 
 
+# Environment Setup
 
+## Tested Environment
+
+The repository was developed and tested using the environment below. All experiments reported in the paper can be reproduced using this configuration.
+
+| Component | Version |
+|-----------|---------|
+| Python | 3.10.x |
+| Jupyter Notebook | 7.x |
+| Operating System | Windows 11 |
+| CUDA | Not required |
+| GPU | Optional (all reported results in the paper were generated on CPU) |
+
+The implementation is **fully notebook-based**. After installing the required dependencies, users can reproduce each experiment by opening the corresponding Jupyter notebook and executing all cells sequentially.
 
 
 
