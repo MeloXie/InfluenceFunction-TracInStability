@@ -1,0 +1,17 @@
+dcor==0.6
+ipykernel==6.29.5
+jupyterlab==4.3.5
+keras==2.9.0
+notebook==7.3.2
+numpy==1.26.4
+pandas==2.2.3
+protobuf==3.19.6
+scikit-learn==1.6.1
+scipy==1.15.2
+seaborn==0.13.2
+tensorflow==2.9.3
+tensorflow-datasets==4.9.7
+tqdm==4.67.1
+ucimlrepo==0.0.7
+matplotlib==3.10.0
+statsmodels==0.14.4
