@@ -36,6 +36,7 @@ The repository includes the code required to reproduce the experiments, figures,
 - [Requirements and Installation](#Requirements-and-Installation)
 - [Reproducing the Paper](#reproducing-the-paper)
 - [Repository Structure](#repository-structure)
+- [Citation](#citation)
 
 
 
@@ -304,6 +305,19 @@ InfluenceFunction-TracInStability/
 | `requirements.txt` | Lists the Python packages required to execute the notebooks in this repository. |
 
 
+# Citation
+
+### GitHub Repository
+
+```bibtex
+@misc{OurRepo,
+  author       = {Tianyang Xie and Paolo Missier and Huiping Chen},
+  title        = {InfluenceFunction-TracInStability: Supplementary Material and Source Code},
+  year         = {2026},
+  howpublished = {\url{https://github.com/MeloXie/InfluenceFunction-TracInStability}},
+  note         = {GitHub repository}
+}
+```
 
 
 
