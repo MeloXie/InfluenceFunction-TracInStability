@@ -139,25 +139,119 @@ To simplify execution, each notebook expects the required CSV datasets to be loc
 
 # Reproducing the Paper
 
-The repository is organised according to the figures and tables reported in the paper. Each experiment is contained in an individual folder under `PaperExperiments/`.
+This repository is organized around the experiments reported in the paper. Each figure, table, and additional analysis is placed in an individual directory under `PaperExperiments/`.
 
-Each experiment folder is **self-contained** and includes:
+Every experiment directory contains:
 
-- the Jupyter notebook used for the experiment;
-- the required datasets and intermediate files;
-- the generated outputs (where applicable); and
-- a README describing the experiment and expected results.
+- the Jupyter notebooks required to reproduce the experiment;
+- the intermediate files generated during development (where appropriate);
+- all datasets required for execution; and
+- a dedicated `README.md` describing the reproduction workflow, required parameter changes, expected outputs, and notes.
 
-This organisation provides two ways to reproduce the paper:
+Most experiments can therefore be reproduced independently without interacting with the remaining folders.
 
-1. **Full reproduction:** Execute the notebook from beginning to end to regenerate all intermediate results and the final figures/tables.
-2. **Fast reproduction:** Use the provided intermediate files to reproduce the final figures and tables without rerunning the complete experimental pipeline.
+> **Recommendation**
+>
+> Several experiments involve computationally expensive influence estimation (particularly those using the full Diamonds dataset or multiple repeated runs). Intermediate files generated during development are included whenever possible. Users interested in reproducing only the reported figures or tables are encouraged to use these provided files to avoid unnecessary recomputation.
 
-The following table maps each figure and table in the paper to its corresponding experiment folder.
+---
 
+## PaperExperiments Structure
 
+```text
+PaperExperiments/
+│
+├── Figure1_CaseStudy_Stability/
+├── Figure2_CaseStudy_Consistency/
+├── Figure3_Feature_Heatmap/
+├── Figure4_Influence_VS_Loss/
+├── Figure5_Distance_Influence/
+├── Figure6_Rank_Position/
+├── Figure7_Lift_Plot/
+│
+├── Table2_Chunk_Entropy/
+├── Table3_Influence_Loss_Stats/
+├── Table4_1_9_Lift/
+├── Table5_Consistency/
+├── Table6_Downstream/
+│
+└── Multi_Regression_Slope/
+```
 
+---
 
+## Experiments Included
+
+| Paper Result | Folder | Description |
+|--------------|--------|-------------|
+| Figure 1 | `Figure1_CaseStudy_Stability` | Stability of influence rankings under different age-imputation strategies on Titanic. |
+| Figure 2 | `Figure2_CaseStudy_Consistency` | Rank consistency between FOIF and TracIn. |
+| Figure 3 | `Figure3_Feature_Heatmap` | Stability under increasing feature dimensionality. |
+| Figure 4 | `Figure4_Influence_VS_Loss` | Relationship between training loss and influence scores. |
+| Figure 5 | `Figure5_Distance_Influence` | Influence-score differences across distance bands. |
+| Figure 6 | `Figure6_Rank_Position` | Rank-position distributions under different density settings. |
+| Figure 7 | `Figure7_Lift_Plot` | Minority-lift evaluation under varying class imbalance ratios. |
+| Table 2 | `Table2_Chunk_Entropy` | Chunk-contribution entropy across different dataset partitions. |
+| Table 3 | `Table3_Influence_Loss_Stats` | Correlation between training loss and influence statistics. |
+| Table 4 | `Table4_1_9_Lift` | Sign-aware minority lift under 1:9 class imbalance. |
+| Table 5 | `Table5_Consistency` | Consistency between FOIF and TracIn under different data properties. |
+| Table 6 | `Table6_Downstream` | Noisy-label detection and downstream pruning evaluation. |
+| Additional Analysis | `Multi_Regression_Slope` | Multiple linear regression analysis supporting the discussions on class imbalance and density effects. |
+
+---
+
+## General Reproduction Workflow
+
+Although each experiment differs, most follow the same overall workflow:
+
+1. **Generate influence scores**
+   - Execute the corresponding influence-estimation notebook.
+
+2. **Generate intermediate files**
+   - Influence scores, losses, labels, or other experiment-specific outputs are produced.
+
+3. **Run the analysis notebook**
+   - The generated files are summarized to reproduce the reported figure, table, or statistical analysis.
+
+Detailed instructions for each experiment are provided in the corresponding `README.md` within each folder.
+
+---
+
+## Computational Cost
+
+Some experiments require substantially longer execution times than others.
+
+| Computational Cost | Examples |
+|--------------------|----------|
+| **Low** | Figure 1, Figure 2 |
+| **Medium** | Figure 4, Figure 5, Figure 6 |
+| **High** | Figure 3 (5 repeated runs), Table 2 (5 large repeated runs), Table 6 (multiple retraining experiments) |
+| **Very High** | Any experiment involving the full Diamonds dataset (approximately 54,000 training samples). |
+
+For all computationally intensive experiments, intermediate files are provided whenever possible so that users may skip the influence-estimation stage and directly reproduce the reported results.
+
+---
+
+## Additional Notes
+
+- Every experiment is completely self-contained.
+- Each folder contains all notebooks and files required for reproduction.
+- All experiments are notebook-based and can be executed sequentially by running the notebook cells.
+- Unless otherwise stated in the experiment-specific README, the provided datasets should be placed in the same directory as the corresponding notebook.
+- Experiment-specific parameter changes, filename updates, and expected outputs are documented in the individual `README.md` files.
+
+## Supplementary Experiments
+
+Experiments corresponding to the supplementary material will be released under the `SupplementaryExperiments/` directory.
+
+```text
+SupplementaryExperiments/
+└── (to be updated)
+```
+
+These experiments will follow the same organization as `PaperExperiments`, with each experiment provided as a self-contained folder containing the notebooks, datasets, intermediate files, and a dedicated `README.md` describing the reproduction workflow.
+
+> **Status:** Coming soon.
 
 
 
