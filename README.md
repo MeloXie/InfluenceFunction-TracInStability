@@ -255,7 +255,53 @@ These experiments will follow the same organization as `PaperExperiments`, with 
 
 
 
+# Repository Structure
 
+The repository is organized into reusable experiment modules together with the complete paper reproduction workflow.
+
+```text
+InfluenceFunction-TracInStability/
+│
+├── ClassImbalance/
+├── Dataset/
+├── NumOfFeatures/
+├── NumOfSamples/
+├── PaperExperiments/
+├── SparsityAndDensity/
+├── SupplementaryExperiments/
+├── third_party/
+│
+├── 00_Install_Requirements.ipynb
+├── README.md
+├── SimpleOverallFrameWork.ipynb
+├── SupplementaryMaterial_ver1.0.pdf
+└── requirements.txt
+```
+
+## Top-Level Directories
+
+| Directory | Description |
+|-----------|-------------|
+| `ClassImbalance/` | Contains the notebooks used to compute FOIF and TracIn influence scores under different class-imbalance ratios. These notebooks are reused by several experiments in the paper. |
+| `Dataset/` | Contains the prepared datasets (`train.csv` and `diamonds.csv`) together with a notebook explaining how the datasets are loaded and prepared for the experiments. |
+| `NumOfFeatures/` | Contains the notebook used to compute FOIF and TracIn influence scores under different feature dimensionalities. |
+| `NumOfSamples/` | Contains the notebook used to compute FOIF and TracIn influence scores under different training dataset sizes. |
+| `PaperExperiments/` | Contains the complete reproduction workflow for every figure, table, and additional analysis reported in the paper. Each experiment is self-contained and includes its own `README.md` with detailed reproduction instructions. |
+| `SparsityAndDensity/` | Contains the notebook used to compute FOIF and TracIn influence scores under different sparsity and local-density settings. |
+| `SupplementaryExperiments/` | Contains the experiments corresponding to the supplementary material. This section will be expanded as the supplementary experiments are released. |
+| `third_party/` | Contains the modified `influenciae_tabular` implementation used during development. Users may alternatively install the official Influenciae package as described in the installation guide. |
+
+---
+
+## Root Files
+
+| File | Description |
+|------|-------------|
+| `00_Install_Requirements.ipynb` | A one-click Jupyter notebook for installing the required Python packages directly from `requirements.txt`. |
+| `README.md` | The main documentation for the repository, including installation instructions, repository organization, and paper reproduction guidance. |
+| `SimpleOverallFrameWork.ipynb` | A simplified end-to-end example demonstrating the general workflow for computing FOIF and TracIn influence scores, together with explanatory comments describing the implementation pipeline. |
+| `SupplementaryMaterial_ver1.0.pdf` | The supplementary material accompanying the paper, containing additional experimental results and analyses. |
+| `requirements.txt` | Lists the Python packages required to execute the notebooks in this repository. |
 
 
 
