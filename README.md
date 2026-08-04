@@ -1,7 +1,7 @@
 # Code for 'Data-Side Robustness of Training-Data Influence Estimation'
 
 
-# Quick Navigation
+## Quick Navigation
 
 - [Repository Structure](#repository-structure)
 - [Requirements and Installation](#requirements-and-installation)
