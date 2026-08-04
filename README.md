@@ -1,61 +1,63 @@
-# Data-Side Robustness of Training-Data Influence Estimation
-
-This repository contains the implementation and experimental framework accompanying our paper:
-> **Data-Side Robustness of Training-Data Influence Estimation**  
-> Tianyang Xie, Paolo Missier, and Huiping Chen
-
-The project provides a reproducible notebook-based implementation for evaluating the data-side robustness of two representative training-data influence estimation methods:
-- **First-Order Influence Function (FOIF)**
-- **TracIn**
-
-Implemented by Influenciae
+# Code for 'Data-Side Robustness of Training-Data Influence Estimation'
 
 
-The experiments study how influence estimates respond to changes in:
+# Quick Navigation
 
-- training-set size;
-- feature dimensionality;
-- high-loss samples;
-- local density;
-- class imbalance.
-
-The repository includes the code required to reproduce the experiments, figures, and tables reported in both the main paper and the supplementary material.
-
-## Highlights
-
-- Fully notebook-based experimental workflow
-- Reproducible implementations of FOIF and TracIn
-- Synthetic and real tabular datasets
-- Stability and cross-method consistency evaluation
-- Scripts and notebooks for reproducing paper figures and tables
-- Additional analyses for noisy-label detection and data pruning
-
-## Quick Navigation
-
-- [Environment Setup](#environment-setup)
-- [Requirements and Installation](#Requirements-and-Installation)
-- [Reproducing the Paper](#reproducing-the-paper)
 - [Repository Structure](#repository-structure)
+- [Requirements and Installation](#requirements-and-installation)
+- [Environment Setup](#environment-setup)
+- [Reproducing the Paper](#reproducing-the-paper)
+- [Repository Overview](#repository-overview)
 - [Citation](#citation)
 
 
+# Repository Structure
 
+The repository is organized into reusable experiment modules together with the complete paper reproduction workflow.
 
+```text
+InfluenceFunction-TracInStability/
+│
+├── ClassImbalance/
+├── Dataset/
+├── NumOfFeatures/
+├── NumOfSamples/
+├── PaperExperiments/
+├── SparsityAndDensity/
+├── SupplementaryExperiments/
+├── third_party/
+│
+├── 00_Install_Requirements.ipynb
+├── README.md
+├── SimpleOverallFrameWork.ipynb
+├── SupplementaryMaterial_ver1.0.pdf
+└── requirements.txt
+```
 
+## Top-Level Directories
 
-# Environment Setup
+| Directory | Description |
+|-----------|-------------|
+| `ClassImbalance/` | Contains the notebooks used to compute FOIF and TracIn influence scores under different class-imbalance ratios. These notebooks are reused by several experiments in the paper. |
+| `Dataset/` | Contains the prepared datasets (`train.csv` and `diamonds.csv`) together with a notebook explaining how the datasets are loaded and prepared for the experiments. |
+| `NumOfFeatures/` | Contains the notebook used to compute FOIF and TracIn influence scores under different feature dimensionalities. |
+| `NumOfSamples/` | Contains the notebook used to compute FOIF and TracIn influence scores under different training dataset sizes. |
+| `PaperExperiments/` | Contains the complete reproduction workflow for every figure, table, and additional analysis reported in the paper. Each experiment is self-contained and includes its own `README.md` with detailed reproduction instructions. |
+| `SparsityAndDensity/` | Contains the notebook used to compute FOIF and TracIn influence scores under different sparsity and local-density settings. |
+| `SupplementaryExperiments/` | Contains the experiments corresponding to the supplementary material. This section will be expanded as the supplementary experiments are released. |
+| `third_party/` | Contains the modified `influenciae_tabular` implementation used during development. Users may alternatively install the official Influenciae package as described in the installation guide. |
 
-The repository was developed and tested using the environment below. All experiments reported in the paper can be reproduced using this configuration.
+---
 
-| Component | Version |
-|-----------|---------|
-| Python | 3.10.8 |
-| Jupyter Notebook | 7.3.2 |
-| Operating System | Windows 11 |
-| CUDA | Not required |
-| GPU | Optional (all reported results in the paper were generated on CPU) |
+## Root Files
 
-The implementation is **fully notebook-based**. After installing the required dependencies, users can reproduce each experiment by opening the corresponding Jupyter notebook and executing all cells sequentially.
+| File | Description |
+|------|-------------|
+| `00_Install_Requirements.ipynb` | A one-click Jupyter notebook for installing the required Python packages directly from `requirements.txt`. |
+| `README.md` | The main documentation for the repository, including installation instructions, repository organization, and paper reproduction guidance. |
+| `SimpleOverallFrameWork.ipynb` | A simplified end-to-end example demonstrating the general workflow for computing FOIF and TracIn influence scores, together with explanatory comments describing the implementation pipeline. |
+| `SupplementaryMaterial_ver1.0.pdf` | The supplementary material accompanying the paper, containing additional experimental results and analyses. |
+| `requirements.txt` | Lists the Python packages required to execute the notebooks in this repository. |
 
 
 
@@ -134,6 +136,23 @@ df = pd.read_csv("diamonds.csv")
 ```
 
 To simplify execution, each notebook expects the required CSV datasets to be located in the same directory as the notebook.
+
+
+
+
+# Environment Setup
+
+The repository was developed and tested using the environment below. All experiments reported in the paper can be reproduced using this configuration.
+
+| Component | Version |
+|-----------|---------|
+| Python | 3.10.8 |
+| Jupyter Notebook | 7.3.2 |
+| Operating System | Windows 11 |
+| CUDA | Not required |
+| GPU | Optional (all reported results in the paper were generated on CPU) |
+
+The implementation is **fully notebook-based**. After installing the required dependencies, users can reproduce each experiment by opening the corresponding Jupyter notebook and executing all cells sequentially.
 
 
 
@@ -256,53 +275,39 @@ These experiments will follow the same organization as `PaperExperiments`, with 
 
 
 
-# Repository Structure
 
-The repository is organized into reusable experiment modules together with the complete paper reproduction workflow.
+# Repository Overview
 
-```text
-InfluenceFunction-TracInStability/
-│
-├── ClassImbalance/
-├── Dataset/
-├── NumOfFeatures/
-├── NumOfSamples/
-├── PaperExperiments/
-├── SparsityAndDensity/
-├── SupplementaryExperiments/
-├── third_party/
-│
-├── 00_Install_Requirements.ipynb
-├── README.md
-├── SimpleOverallFrameWork.ipynb
-├── SupplementaryMaterial_ver1.0.pdf
-└── requirements.txt
-```
+This repository contains the implementation and experimental framework accompanying our paper:
+> **Data-Side Robustness of Training-Data Influence Estimation**  
+> Tianyang Xie, Paolo Missier, and Huiping Chen
 
-## Top-Level Directories
+The project provides a reproducible notebook-based implementation for evaluating the data-side robustness of two representative training-data influence estimation methods:
+- **First-Order Influence Function (FOIF)**
+- **TracIn**
 
-| Directory | Description |
-|-----------|-------------|
-| `ClassImbalance/` | Contains the notebooks used to compute FOIF and TracIn influence scores under different class-imbalance ratios. These notebooks are reused by several experiments in the paper. |
-| `Dataset/` | Contains the prepared datasets (`train.csv` and `diamonds.csv`) together with a notebook explaining how the datasets are loaded and prepared for the experiments. |
-| `NumOfFeatures/` | Contains the notebook used to compute FOIF and TracIn influence scores under different feature dimensionalities. |
-| `NumOfSamples/` | Contains the notebook used to compute FOIF and TracIn influence scores under different training dataset sizes. |
-| `PaperExperiments/` | Contains the complete reproduction workflow for every figure, table, and additional analysis reported in the paper. Each experiment is self-contained and includes its own `README.md` with detailed reproduction instructions. |
-| `SparsityAndDensity/` | Contains the notebook used to compute FOIF and TracIn influence scores under different sparsity and local-density settings. |
-| `SupplementaryExperiments/` | Contains the experiments corresponding to the supplementary material. This section will be expanded as the supplementary experiments are released. |
-| `third_party/` | Contains the modified `influenciae_tabular` implementation used during development. Users may alternatively install the official Influenciae package as described in the installation guide. |
+Implemented by Influenciae
 
----
 
-## Root Files
+The experiments study how influence estimates respond to changes in:
 
-| File | Description |
-|------|-------------|
-| `00_Install_Requirements.ipynb` | A one-click Jupyter notebook for installing the required Python packages directly from `requirements.txt`. |
-| `README.md` | The main documentation for the repository, including installation instructions, repository organization, and paper reproduction guidance. |
-| `SimpleOverallFrameWork.ipynb` | A simplified end-to-end example demonstrating the general workflow for computing FOIF and TracIn influence scores, together with explanatory comments describing the implementation pipeline. |
-| `SupplementaryMaterial_ver1.0.pdf` | The supplementary material accompanying the paper, containing additional experimental results and analyses. |
-| `requirements.txt` | Lists the Python packages required to execute the notebooks in this repository. |
+- training-set size;
+- feature dimensionality;
+- high-loss samples;
+- local density;
+- class imbalance.
+
+The repository includes the code required to reproduce the experiments, figures, and tables reported in both the main paper and the supplementary material.
+
+## Highlights
+
+- Fully notebook-based experimental workflow
+- Reproducible implementations of FOIF and TracIn
+- Synthetic and real tabular datasets
+- Stability and cross-method consistency evaluation
+- Scripts and notebooks for reproducing paper figures and tables
+- Additional analyses for noisy-label detection and data pruning
+
 
 
 # Citation
