@@ -148,12 +148,11 @@ The repository was developed and tested using the environment below. All experim
 |-----------|---------|
 | Python | 3.10.8 |
 | Jupyter Notebook | 7.3.2 |
-| Operating System | Windows 11 |
 | CUDA | Not required |
 | GPU | Optional (all reported results in the paper were generated on CPU) |
 
 The implementation is **fully notebook-based**. After installing the required dependencies, users can reproduce each experiment by opening the corresponding Jupyter notebook and executing all cells sequentially.
-
+> **Development Environment:** All experiments in this repository were developed and validated on **Windows 11** using Jupyter Notebook.
 
 
 
