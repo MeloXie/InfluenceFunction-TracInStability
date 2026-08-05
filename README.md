@@ -261,17 +261,39 @@ For all computationally intensive experiments, intermediate files are provided w
 
 ## Supplementary Experiments
 
-Experiments corresponding to the supplementary material will be released under the `SupplementaryExperiments/` directory.
+In addition to the experiments presented in the main paper, this repository also contains the complete implementation of all supplementary experiments described in the accompanying supplementary material.
+
+The supplementary experiments are organised under:
 
 ```text
 SupplementaryExperiments/
-└── (to be updated)
 ```
 
-These experiments will follow the same organization as `PaperExperiments`, with each experiment provided as a self-contained folder containing the notebooks, datasets, intermediate files, and a dedicated `README.md` describing the reproduction workflow.
+Each experiment has its own dedicated folder containing:
 
-> **Status:** Coming soon.
+- a standalone `README.md` with detailed reproduction instructions,
+- the corresponding Jupyter notebooks,
+- any required intermediate files (where provided), and
+- descriptions of the expected outputs.
 
+The supplementary experiments include:
+
+- Aggregation strategy comparison
+- Additional class-imbalance lift evaluation (2:8 and 3:7)
+- TracIn checkpoint effectiveness
+- Diamonds chunk-entropy analysis
+- Extended class-imbalance loss-decile analysis
+- Conditional Spearman correlation analysis
+- Distance-influence analysis on Diamonds
+- Extended downstream evaluation
+- Influence-versus-loss analysis on Adult
+- Loss-decile analysis
+- MMD sanity check
+- Extended regression-slope analysis (class imbalance and density)
+- Runtime evaluation
+- Zero-padding feature heatmap
+
+The overall reproduction workflow follows the same design as the main-paper experiments. Where experiments require extensive influence estimation (e.g., multiple independent runs or large real-world datasets), intermediate results are provided to enable fast and convenient reproduction.
 
 
 
