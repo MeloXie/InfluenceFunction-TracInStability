@@ -47,6 +47,7 @@ As in the **Feature Heatmap** experiment from the main paper, change the feature
 ```python
 k = 0
 ```
+and comment the other code in that block.
 
 - For the remaining feature settings (14–52 features), use
 
