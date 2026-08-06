@@ -1,5 +1,8 @@
 # Code for 'Data-Side Robustness of Training-Data Influence Estimation'
 
+The complete supplementary material accompanying the paper is available here:
+
+**➡️ [SupplementaryPaper.pdf](SupplementaryPaper.pdf)**
 
 ## Quick Navigation
 
